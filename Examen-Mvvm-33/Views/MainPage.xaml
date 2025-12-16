@@ -1,0 +1,19 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Examen_Mvvm.ViewModels"
+             x:Class="Examen_Mvvm.Views.MainPage">
+    <ContentPage.BindingContext>
+        <vm:MainViewModel/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Examen MVVM" FontSize="24" HorizontalOptions="Center"/>
+        <Entry Placeholder="Producto 1" Keyboard="Numeric" Text="{Binding Producto1}"/>
+        <Entry Placeholder="Producto 2" Keyboard="Numeric" Text="{Binding Producto2}"/>
+        <Entry Placeholder="Producto 3" Keyboard="Numeric" Text="{Binding Producto3}"/>
+        <Entry Placeholder="Subtotal" IsReadOnly="True" Text="{Binding Subtotal}"/>
+        <Entry Placeholder="Descuento" IsReadOnly="True" Text="{Binding Descuento}"/>
+        <Entry Placeholder="Total a pagar" IsReadOnly="True" Text="{Binding Total}"/>
+        <Button Text="Calcular" Command="{Binding CalcularCommand}"/>
+        <Button Text="Limpiar" Command="{Binding LimpiarCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>
